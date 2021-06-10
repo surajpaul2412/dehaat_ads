@@ -272,6 +272,13 @@ margin: 0;
 .moretext{
     display: none;
 }
+/*modal*/
+.modal-body{
+    padding: 0px;
+}
+.modal-dialog{
+    top: 25%;
+}
 /*mobile view only*/
 @media only screen and (max-width: 745px) {
     .carousel1 .box{

@@ -70,24 +70,32 @@
 		<div class="pl-3">
 			<div class="carousel1 pt-3">
 		        <div class="box">
-		            <img src="img/image1.png">
-		            <div class="text-green bold pt-3 hindi font-w-500">देहात का सफ़र</div>
-		            <div class="text-black-light2 pt-0 hindi font-w-500">बीज से बाज़ार तक</div>
+		        	<a href="#" class="video-btn" data-toggle="modal" data-src="https://www.youtube.com/embed/rmJxSeS219o" data-target="#video_pop">
+			            <img src="img/image1.png">
+			            <div class="text-green bold pt-3 hindi font-w-500">देहात का सफ़र</div>
+			            <div class="text-black-light2 pt-0 hindi font-w-500">बीज से बाज़ार तक</div>
+		        	</a>
 		        </div>
 		        <div class="box">
-		            <img src="img/image1.png">
-		            <div class="text-green bold pt-3 hindi font-w-500">शशांक कुमार</div>
-		            <div class="text-black-light2 pt-0 hindi font-w-500">CEO, IIT Delhi</div>
+		        	<a href="#" class="video-btn1" data-toggle="modal" data-src="https://www.youtube.com/embed/Zlt5wkaMIk0" data-target="#video_pop1">
+			            <img src="img/image2.png">
+			            <div class="text-green bold pt-3 hindi font-w-500">शशांक कुमार</div>
+			            <div class="text-black-light2 pt-0 hindi font-w-500">CEO, IIT Delhi</div>
+			        </a>
 		        </div>
 		        <div class="box">
-		            <img src="img/image1.png">
-		            <div class="text-green bold pt-3 hindi font-w-500">अमरेन्द्र सिंह</div>
-		            <div class="text-black-light2 pt-0 hindi font-w-500">Director, Agri-Input</div>
+		        	<a href="#" class="video-btn2" data-toggle="modal" data-src="https://www.youtube.com/embed/oe6j2TUfmqQ" data-target="#video_pop2">
+			            <img src="img/image3.png">
+			            <div class="text-green bold pt-3 hindi font-w-500">अमरेन्द्र सिंह</div>
+			            <div class="text-black-light2 pt-0 hindi font-w-500">Director, Agri-Input</div>
+			        </a>
 		        </div>
 		        <div class="box">
-		            <img src="img/image1.png">
-		            <div class="text-green bold pt-3 hindi font-w-500">देहात का सफ़र</div>
-		            <div class="text-black-light2 pt-0 hindi font-w-500">बीज से बाज़ार तक</div>
+		            <a href="#" class="video-btn" data-toggle="modal" data-src="https://www.youtube.com/embed/Zlt5wkaMIk0" data-target="#video_pop">
+			            <img src="img/image1.png">
+			            <div class="text-green bold pt-3 hindi font-w-500">देहात का सफ़र</div>
+			            <div class="text-black-light2 pt-0 hindi font-w-500">बीज से बाज़ार तक</div>
+		        	</a>
 		        </div>
 		    </div>
 		</div>
@@ -270,6 +278,41 @@
 	</section>
 
 
+<!-- POPUP -->
+<div class="modal fade" id="video_pop" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-body">  
+               <div class="embed-responsive embed-responsive-16by9">
+                 <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always"></iframe>
+               </div>                
+         </div>        
+       </div>
+     </div>
+</div>
+<div class="modal fade" id="video_pop1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-body">  
+               <div class="embed-responsive embed-responsive-16by9">
+                 <iframe class="embed-responsive-item" src="" id="video1"  allowscriptaccess="always"></iframe>
+               </div>                
+         </div>        
+       </div>
+     </div>
+</div>
+<div class="modal fade" id="video_pop2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-body">  
+               <div class="embed-responsive embed-responsive-16by9">
+                 <iframe class="embed-responsive-item" src="" id="video2"  allowscriptaccess="always"></iframe>
+               </div>                
+         </div>        
+       </div>
+     </div>
+</div>
+
 
 	<!-- floating card -->
 	<div id="float-card">
@@ -300,7 +343,6 @@
 			</div>
 		</a>
 	</div>
-
 
 	<!-- JQuery -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -411,5 +453,72 @@
 			$('#float-button').hide();
 		});
 	</script>
+
+<script type="text/javascript">
+   $(document).ready(function() {  
+     // Gets the video src from the data-src on each button    
+     var $videoSrc;  
+     $('.video-btn').click(function() {
+       $videoSrc = $(this).data( "src" );      
+     });
+     //console.log($videoSrc);  
+       
+     // when the modal is opened autoplay it  
+     $('#video_pop').on('shown.bs.modal', function (e) {
+       
+     // set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
+     $("#video").attr('src',$videoSrc + "?rel=0&amp;showinfo=0&amp;modestbranding=1&amp;autoplay=1" ); 
+     });
+
+     $('#video_pop').on('hide.bs.modal', function (e) {
+       $("#video").attr('src',$videoSrc); 
+     });
+   
+    }); 
+
+   $(document).ready(function() {  
+     // Gets the video src from the data-src on each button    
+     var $videoSrc;  
+     $('.video-btn1').click(function() {
+       $videoSrc = $(this).data( "src" );      
+     });
+     //console.log($videoSrc);  
+       
+     // when the modal is opened autoplay it  
+     $('#video_pop1').on('shown.bs.modal', function (e) {
+       
+     // set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
+     $("#video1").attr('src',$videoSrc + "?rel=0&amp;showinfo=0&amp;modestbranding=1&amp;autoplay=1" ); 
+     });
+
+     $('#video_pop1').on('hide.bs.modal', function (e) {
+       $("#video1").attr('src',$videoSrc); 
+     });
+   
+    }); 
+
+   $(document).ready(function() {  
+     // Gets the video src from the data-src on each button    
+     var $videoSrc;  
+     $('.video-btn2').click(function() {
+       $videoSrc = $(this).data( "src" );      
+     });
+     //console.log($videoSrc);  
+       
+     // when the modal is opened autoplay it  
+     $('#video_pop2').on('shown.bs.modal', function (e) {
+       
+     // set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
+     $("#video2").attr('src',$videoSrc + "?rel=0&amp;showinfo=0&amp;modestbranding=1&amp;autoplay=1" ); 
+     });
+
+     $('#video_pop2').on('hide.bs.modal', function (e) {
+       $("#video2").attr('src',$videoSrc); 
+     });
+   
+    }); 
+</script>
+
+	
 </body>
 </html>
