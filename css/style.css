@@ -16,13 +16,16 @@ body{
 }
 h2{
     font-weight: bold;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     color: #06592F;
 }
 h3{
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: #000;
+}
+p{
+    font-size: 1.1rem;
 }
 .bg-green{
     background: #F0FFF5;
@@ -269,7 +272,7 @@ margin: 0;
 /*mobile view only*/
 @media only screen and (max-width: 745px) {
     .carousel1 .box{
-        width: 0.7% !important;
+        width: 0.8% !important;
     }
     .carousel1 .box {
     float: left;
