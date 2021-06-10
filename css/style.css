@@ -234,6 +234,9 @@ display: none;
 width: 0;
 margin: 0;
 }
+.card[class*=border]{
+    border: none;
+}
 .font-13{
     font-size: 14px;
 }
